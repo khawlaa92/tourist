@@ -1,0 +1,9 @@
+{
+  "revokedTokens": [
+    {
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJmNTE2YzY0Ny0zMDdhLTQ5MjEtODI0Zi03NWMxODZjMzk5MjgiLCJlbWFpbCI6ImFsaUB0ZXN0LmNvbSIsImlhdCI6MTc3NzU2ODU5NiwiZXhwIjoxNzc4MTczMzk2fQ.wgVQ1IZ9K97OWXlbZNtljXuOLRyCQvcgebJ6iY9IRTg",
+      "revokedAt": "2026-04-30T17:07:32.902Z"
+    }
+  ],
+  "passwordResetTokens": []
+}

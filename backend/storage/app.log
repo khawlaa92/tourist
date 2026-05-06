@@ -1,0 +1,307 @@
+[2026-04-30T16:45:27.800Z] INFO Backend running on port 5000
+[2026-04-30T16:47:54.288Z] INFO POST /api/auth/register
+[2026-04-30T16:51:29.479Z] INFO POST /api/auth/login
+[2026-04-30T16:52:42.661Z] ERROR Request failed | Unexpected token 'A', "Authorizat"... is not valid JSON
+[2026-04-30T16:54:35.773Z] ERROR Request failed | Unexpected token 'A', "Authorizat"... is not valid JSON
+[2026-04-30T16:57:38.039Z] ERROR Request failed | Unexpected token 'A', "Authorizat"... is not valid JSON
+[2026-04-30T17:00:09.989Z] INFO POST /api/auth/logout
+[2026-04-30T17:00:09.999Z] ERROR Request failed | Invalid or expired authorization token.
+[2026-04-30T17:03:16.031Z] INFO POST /api/auth/login
+[2026-04-30T17:07:32.879Z] INFO POST /api/auth/logout
+[2026-04-30T17:24:43.655Z] INFO POST /api/chat
+[2026-04-30T17:24:43.698Z] ERROR Request failed | This session has already been logged out.
+[2026-04-30T17:29:22.236Z] INFO POST /api/auth/register
+[2026-04-30T17:29:22.247Z] ERROR Request failed | A user with this email already exists.
+[2026-04-30T17:29:41.499Z] INFO POST /api/auth/register
+[2026-04-30T17:32:14.665Z] INFO POST /api/auth/login
+[2026-04-30T17:35:45.837Z] INFO POST /api/chat
+[2026-04-30T17:35:45.922Z] ERROR Request failed | OPENAI_API_KEY is missing. Configure it in backend/.env.
+[2026-04-30T17:42:44.516Z] INFO Backend running on port 5000
+[2026-04-30T17:43:14.961Z] INFO POST /api/chat
+[2026-04-30T17:43:14.990Z] ERROR Request failed | OPENAI_API_KEY is missing. Configure it in backend/.env.
+[2026-04-30T17:44:55.677Z] INFO Backend running on port 5000
+[2026-04-30T17:45:00.648Z] INFO POST /api/chat
+[2026-04-30T17:45:00.661Z] ERROR Request failed | OPENAI_API_KEY is missing. Configure it in backend/.env.
+[2026-04-30T17:55:52.242Z] INFO Backend running on port 5000
+[2026-04-30T17:55:58.502Z] INFO POST /api/chat
+[2026-04-30T17:55:58.521Z] ERROR Request failed | OPENAI_API_KEY is missing. Configure it in backend/.env.
+[2026-04-30T18:04:05.066Z] INFO Backend running on port 5000
+[2026-04-30T18:04:14.482Z] INFO POST /api/chat
+[2026-04-30T18:04:14.506Z] ERROR Request failed | OPENAI_API_KEY is missing. Configure it in backend/.env.
+[2026-04-30T18:10:31.332Z] INFO Backend running on port 5000
+[2026-04-30T18:11:45.565Z] INFO POST /api/chat
+[2026-04-30T18:11:45.602Z] ERROR Request failed | OPENAI_API_KEY is missing. Configure it in backend/.env.
+[2026-04-30T18:13:44.398Z] INFO Backend running on port 5000
+[2026-04-30T18:14:37.576Z] INFO POST /api/chat
+[2026-04-30T18:14:37.591Z] ERROR Request failed | OPENAI_API_KEY is missing. Configure it in backend/.env.
+[2026-04-30T18:16:29.750Z] INFO Backend running on port 5000
+[2026-04-30T18:16:45.748Z] INFO POST /api/chat
+[2026-04-30T18:16:45.782Z] ERROR Request failed | OPENAI_API_KEY is missing. Configure it in backend/.env.
+[2026-04-30T18:17:52.015Z] INFO Backend running on port 5000
+[2026-04-30T18:22:28.656Z] INFO Backend running on port 5000
+[2026-04-30T18:24:21.746Z] INFO POST /api/chat
+[2026-04-30T18:24:21.772Z] ERROR Request failed | OPENAI_API_KEY is missing. Configure it in backend/.env.
+[2026-04-30T18:29:08.359Z] INFO Backend running on port 5000
+[2026-04-30T18:33:16.293Z] INFO Backend running on port 5000
+[2026-04-30T18:38:31.025Z] INFO Backend running on port 5000
+[2026-04-30T18:48:10.656Z] INFO GET /api/auth/login
+[2026-04-30T18:48:10.666Z] ERROR Request failed | Route not found: /api/auth/login
+[2026-04-30T18:48:28.398Z] INFO POST /api/auth/login
+[2026-04-30T18:52:34.840Z] INFO POST /api/chat
+[2026-04-30T18:52:34.872Z] ERROR Request failed | OPENAI_API_KEY is missing. Configure it in backend/.env.
+[2026-04-30T22:26:19.729Z] INFO POST /api/chat
+[2026-04-30T22:26:19.836Z] ERROR Request failed | OPENAI_API_KEY is missing. Configure it in backend/.env.
+[2026-04-30T22:26:34.676Z] INFO Backend running on port 5000
+[2026-04-30T22:26:45.102Z] INFO POST /api/chat
+[2026-04-30T22:26:45.120Z] ERROR Request failed | OPENAI_API_KEY is missing. Configure it in backend/.env.
+[2026-04-30T22:28:05.797Z] INFO Backend running on port 5000
+[2026-04-30T22:28:13.538Z] INFO POST /api/chat
+[2026-04-30T22:28:14.850Z] ERROR Request failed | OPENAI_API_KEY is missing. Configure it in backend/.env.
+[2026-04-30T22:29:04.522Z] INFO POST /api/chat
+[2026-04-30T22:29:04.528Z] ERROR Request failed | OPENAI_API_KEY is missing. Configure it in backend/.env.
+[2026-04-30T22:35:02.647Z] WARN OPENAI_API_KEY is not set. OpenAI-powered routes will fail until backend/.env is updated.
+[2026-04-30T22:35:03.019Z] INFO Backend running on port 5000
+[2026-04-30T22:35:07.961Z] INFO POST /api/chat
+[2026-04-30T22:35:07.995Z] ERROR Request failed | OPENAI_API_KEY is missing. Configure it in backend/.env.
+[2026-04-30T22:38:49.431Z] WARN OPENAI_API_KEY is not set. OpenAI-powered routes will fail until backend/.env is updated.
+[2026-04-30T22:38:49.803Z] INFO Backend running on port 5000
+[2026-04-30T22:39:08.170Z] INFO POST /api/chat
+[2026-04-30T22:46:01.184Z] INFO GET /api/dashboard
+[2026-04-30T22:46:01.214Z] ERROR Request failed | Route not found: /api/dashboard
+[2026-04-30T22:46:37.305Z] INFO GET /api/dashboard
+[2026-04-30T22:46:37.309Z] ERROR Request failed | Route not found: /api/dashboard
+[2026-04-30T22:52:05.699Z] INFO GET /api/dashboard
+[2026-04-30T22:52:05.855Z] ERROR Request failed | Route not found: /api/dashboard
+[2026-04-30T23:44:18.301Z] WARN OPENAI_API_KEY is not set. OpenAI-powered routes will fail until backend/.env is updated.
+[2026-04-30T23:44:19.179Z] INFO Backend running on port 5000
+[2026-04-30T23:49:22.617Z] WARN OPENAI_API_KEY is not set. OpenAI-powered routes will fail until backend/.env is updated.
+[2026-04-30T23:51:36.760Z] WARN OPENAI_API_KEY is not set. OpenAI-powered routes will fail until backend/.env is updated.
+[2026-04-30T23:54:24.394Z] WARN OPENAI_API_KEY is not set. OpenAI-powered routes will fail until backend/.env is updated.
+[2026-04-30T23:54:25.693Z] INFO Backend running on port 5000
+[2026-04-30T23:57:07.801Z] INFO POST /api/chat
+[2026-04-30T23:57:51.511Z] WARN OPENAI_API_KEY is not set. OpenAI-powered routes will fail until backend/.env is updated.
+[2026-04-30T23:57:59.037Z] INFO GET /health
+[2026-04-30T23:58:13.414Z] WARN OPENAI_API_KEY is not set. OpenAI-powered routes will fail until backend/.env is updated.
+[2026-04-30T23:58:50.653Z] INFO GET /api/dashboard
+[2026-05-01T12:36:58.375Z] WARN OPENAI_API_KEY is not set. OpenAI-powered routes will fail until backend/.env is updated.
+[2026-05-01T12:36:59.717Z] INFO Backend running on port 5000
+[2026-05-01T12:49:16.437Z] INFO POST /api/translate
+[2026-05-01T12:49:16.501Z] ERROR Request failed | targetLanguage is required.
+[2026-05-01T12:53:51.773Z] INFO POST /api/translate
+[2026-05-01T13:02:22.412Z] INFO POST /api/translate
+[2026-05-01T13:02:46.415Z] WARN OPENAI_API_KEY is not set. OpenAI-powered routes will fail until backend/.env is updated.
+[2026-05-01T13:02:46.840Z] INFO Backend running on port 5000
+[2026-05-01T13:02:58.637Z] INFO POST /api/translate
+[2026-05-01T13:02:58.652Z] ERROR Request failed | Failed to translate text with OpenAI.
+[2026-05-01T13:15:52.416Z] WARN OPENAI_API_KEY is not set. OpenAI-powered routes will fail until backend/.env is updated.
+[2026-05-01T13:15:53.021Z] INFO Backend running on port 5000
+[2026-05-01T13:15:58.526Z] INFO POST /api/translate
+[2026-05-01T13:15:58.549Z] ERROR Request failed | Failed to translate text with OpenAI.
+[2026-05-01T13:16:00.319Z] INFO POST /api/translate
+[2026-05-01T13:16:00.326Z] ERROR Request failed | Failed to translate text with OpenAI.
+[2026-05-01T13:16:33.988Z] INFO POST /api/chat
+[2026-05-01T13:38:35.120Z] INFO POST /api/translate
+[2026-05-01T13:38:35.159Z] ERROR Request failed | Failed to translate text with OpenAI.
+[2026-05-01T13:40:17.967Z] WARN OPENAI_API_KEY is not set. The backend will use mock AI responses where supported until backend/.env is updated.
+[2026-05-01T13:40:18.411Z] INFO Backend running on port 5000
+[2026-05-01T13:40:22.622Z] INFO POST /api/translate
+[2026-05-01T13:42:55.793Z] INFO POST /api/translate
+[2026-05-01T14:11:05.859Z] INFO GET /api/convert?from=TND&to=EUR&amount=10
+[2026-05-01T14:11:07.254Z] ERROR Request failed | Request failed with status code 404
+[2026-05-01T14:11:14.650Z] INFO GET /api/convert?from=TND&to=EUR&amount=10
+[2026-05-01T14:11:15.229Z] ERROR Request failed | Request failed with status code 404
+[2026-05-01T14:15:07.893Z] INFO GET /api/convert?from=TND&to=EUR&amount=10
+[2026-05-01T14:15:08.779Z] ERROR Request failed | Request failed with status code 404
+[2026-05-01T14:15:10.821Z] INFO GET /api/convert?from=TND&to=EUR&amount=10
+[2026-05-01T14:15:11.106Z] ERROR Request failed | Request failed with status code 404
+[2026-05-01T14:15:22.931Z] WARN OPENAI_API_KEY is not set. The backend will use mock AI responses where supported until backend/.env is updated.
+[2026-05-01T14:15:23.469Z] INFO Backend running on port 5000
+[2026-05-01T14:15:29.643Z] INFO GET /api/convert?from=TND&to=EUR&amount=10
+[2026-05-01T14:15:30.314Z] ERROR Request failed | Failed to convert currency.
+[2026-05-01T14:17:36.823Z] WARN OPENAI_API_KEY is not set. The backend will use mock AI responses where supported until backend/.env is updated.
+[2026-05-01T14:17:37.207Z] INFO Backend running on port 5000
+[2026-05-01T14:17:41.921Z] INFO GET /api/convert?from=TND&to=EUR&amount=10
+[2026-05-01T14:17:42.566Z] ERROR Request failed | Failed to convert currency.
+[2026-05-01T18:00:35.409Z] INFO GET /api/convert?from=TND&to=EUR&amount=10
+[2026-05-01T18:00:36.367Z] ERROR Request failed | Failed to convert currency.
+[2026-05-01T18:01:28.269Z] WARN OPENAI_API_KEY is not set. The backend will use mock AI responses where supported until backend/.env is updated.
+[2026-05-01T18:01:29.033Z] INFO Backend running on port 5000
+[2026-05-01T18:01:35.518Z] INFO GET /api/convert?from=TND&to=EUR&amount=10
+[2026-05-01T18:01:35.911Z] ERROR Request failed | Failed to convert currency.
+[2026-05-01T18:03:07.605Z] WARN OPENAI_API_KEY is not set. The backend will use mock AI responses where supported until backend/.env is updated.
+[2026-05-01T18:03:08.065Z] INFO Backend running on port 5000
+[2026-05-01T18:03:14.687Z] INFO GET /api/convert?from=TND&to=EUR&amount=10
+[2026-05-01T18:06:20.757Z] INFO GET /api/places?lat=36.8&lng=10.1
+[2026-05-02T19:05:43.425Z] INFO GET /api/places?lat=36.8&lng=10.1
+[2026-05-02T19:08:28.037Z] INFO GET /api/places?lat=36.8&lng=10.1
+[2026-05-02T19:08:42.568Z] WARN OPENAI_API_KEY is not set. The backend will use mock AI responses where supported until backend/.env is updated.
+[2026-05-02T19:08:43.348Z] INFO Backend running on port 5000
+[2026-05-02T19:09:39.115Z] WARN OPENAI_API_KEY is not set. The backend will use mock AI responses where supported until backend/.env is updated.
+[2026-05-02T19:09:39.474Z] INFO Backend running on port 5000
+[2026-05-02T19:16:29.775Z] INFO MongoDB connected successfully.
+[2026-05-02T19:25:04.735Z] WARN OPENAI_API_KEY is not set. The backend will use mock AI responses where supported until backend/.env is updated.
+[2026-05-02T19:25:05.378Z] INFO MongoDB connected successfully.
+[2026-05-02T19:25:05.407Z] INFO Backend running on port 5000
+[2026-05-02T19:30:50.924Z] INFO GET /api/places?lat=36.8&lng=10.1
+[2026-05-02T19:39:30.652Z] INFO MongoDB connected successfully.
+[2026-05-02T19:39:42.187Z] INFO MongoDB connected successfully.
+[2026-05-02T19:43:53.001Z] INFO GET /api/places?lat=36.8&lng=10.1
+[2026-05-02T19:44:27.680Z] INFO GET /api/convert?from=TND&to=EUR&amount=10
+[2026-05-02T19:44:35.760Z] INFO POST /api/translate
+[2026-05-02T19:44:35.869Z] ERROR Request failed | User not found for this token.
+[2026-05-02T19:45:14.048Z] INFO POST /api/translate
+[2026-05-02T19:45:14.061Z] ERROR Request failed | User not found for this token.
+[2026-05-02T19:45:25.412Z] INFO POST /api/translate
+[2026-05-02T19:45:25.424Z] ERROR Request failed | User not found for this token.
+[2026-05-02T19:52:05.944Z] INFO POST /api/auth/register
+[2026-05-02T19:56:18.509Z] INFO POST /api/auth/login
+[2026-05-02T19:59:21.257Z] INFO GET /api/dashboard
+[2026-05-02T20:00:49.915Z] INFO POST /api/chat
+[2026-05-02T20:01:55.899Z] INFO POST /api/translate
+[2026-05-02T20:04:13.903Z] INFO GET /api/convert?from=TND&to=EUR&amount=10
+[2026-05-02T20:05:41.192Z] INFO GET /api/places?lat=36.8&lng=10.1
+[2026-05-02T20:12:27.466Z] WARN OPENAI_API_KEY is not set. The backend will use mock AI responses where supported until backend/.env is updated.
+[2026-05-02T20:12:28.117Z] INFO MongoDB connected successfully.
+[2026-05-02T20:12:28.141Z] INFO Backend running on port 5000
+[2026-05-02T20:21:49.951Z] INFO POST /api/auth/register
+[2026-05-02T20:26:39.312Z] INFO POST /api/auth/forgot-password
+[2026-05-02T20:26:40.467Z] INFO POST /api/auth/forgot-password
+[2026-05-02T20:26:51.356Z] INFO POST /api/auth/forgot-password
+[2026-05-02T20:34:21.100Z] INFO POST /api/auth/forgot-password
+[2026-05-02T20:34:54.553Z] INFO POST /api/auth/forgot-password
+[2026-05-02T20:53:30.093Z] INFO POST /api/auth/forgot-password
+[2026-05-02T20:54:17.004Z] INFO POST /api/auth/forgot-password
+[2026-05-02T20:54:46.942Z] INFO POST /api/auth/forgot-password
+[2026-05-02T20:54:49.215Z] INFO POST /api/auth/forgot-password
+[2026-05-02T20:55:38.494Z] WARN OPENAI_API_KEY is not set. The backend will use mock AI responses where supported until backend/.env is updated.
+[2026-05-02T20:55:39.323Z] INFO MongoDB connected successfully.
+[2026-05-02T20:55:39.335Z] INFO Backend running on port 5000
+[2026-05-02T21:18:23.744Z] INFO POST /api/auth/forgot-password
+[2026-05-02T21:19:44.531Z] INFO POST /api/auth/forgot-password
+[2026-05-02T21:28:20.440Z] INFO POST /api/auth/reset-password
+[2026-05-02T21:28:20.524Z] ERROR Request failed | Invalid password reset token.
+[2026-05-02T21:28:22.871Z] INFO POST /api/auth/reset-password
+[2026-05-02T21:28:22.879Z] ERROR Request failed | Invalid password reset token.
+[2026-05-02T21:28:56.323Z] INFO POST /api/auth/reset-password
+[2026-05-02T21:28:56.345Z] ERROR Request failed | Invalid password reset token.
+[2026-05-02T21:28:57.046Z] INFO POST /api/auth/reset-password
+[2026-05-02T21:28:57.050Z] ERROR Request failed | Invalid password reset token.
+[2026-05-02T21:28:57.202Z] INFO POST /api/auth/reset-password
+[2026-05-02T21:28:57.208Z] ERROR Request failed | Invalid password reset token.
+[2026-05-02T21:31:46.775Z] INFO POST /api/auth/forgot-password
+[2026-05-02T21:33:46.922Z] INFO POST /api/auth/login
+[2026-05-02T21:44:26.391Z] INFO POST /api/auth/forgot-password
+[2026-05-02T21:44:43.548Z] INFO POST /api/auth/forgot-password
+[2026-05-02T21:44:44.560Z] INFO POST /api/auth/forgot-password
+[2026-05-02T21:45:08.439Z] INFO POST /api/auth/forgot-password
+[2026-05-02T21:47:10.524Z] INFO MongoDB is disabled. Using JSON file storage.
+[2026-05-03T14:00:32.478Z] INFO MongoDB is disabled. Using JSON file storage.
+[2026-05-03T14:00:32.518Z] INFO Backend running on port 5000
+[2026-05-03T14:02:12.272Z] INFO MongoDB is disabled. Using JSON file storage.
+[2026-05-03T14:02:12.311Z] INFO Backend running on port 5000
+[2026-05-03T14:13:17.974Z] INFO MongoDB is disabled. Using JSON file storage.
+[2026-05-03T14:13:18.002Z] INFO Backend running on port 5000
+[2026-05-03T14:16:29.198Z] INFO MongoDB is disabled. Using JSON file storage.
+[2026-05-03T14:16:29.209Z] INFO Backend running on port 5000
+[2026-05-03T14:18:11.488Z] ERROR MongoDB connection failed. Falling back to JSON file storage. | Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-05-03T14:20:39.026Z] ERROR MongoDB connection failed. Falling back to JSON file storage. | Could not connect to any servers in your MongoDB Atlas cluster. One common reason is that you're trying to access the database from an IP that isn't whitelisted. Make sure your current IP address is on your Atlas cluster's IP whitelist: https://www.mongodb.com/docs/atlas/security-whitelist/
+[2026-05-03T14:20:39.032Z] INFO Backend running on port 5000
+[2026-05-03T14:23:57.472Z] INFO MongoDB connected successfully.
+[2026-05-03T14:23:57.488Z] INFO Backend running on port 5000
+[2026-05-03T14:54:18.876Z] INFO POST /api/auth/register
+[2026-05-03T14:54:48.186Z] INFO POST /api/auth/login
+[2026-05-03T14:54:48.271Z] ERROR Request failed | Invalid email or password.
+[2026-05-03T14:55:04.238Z] INFO POST /api/auth/forgot-password
+[2026-05-03T14:55:05.167Z] ERROR Request failed | Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-48a8fe92924sm57650305e9.2 - gsmtp
+[2026-05-03T14:55:49.621Z] INFO POST /api/auth/forgot-password
+[2026-05-03T14:55:50.275Z] ERROR Request failed | Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials ffacd0b85a97d-44a981defb3sm25712818f8f.20 - gsmtp
+[2026-05-03T15:00:24.047Z] INFO POST /api/auth/forgot-password
+[2026-05-03T15:00:24.642Z] ERROR Request failed | Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials ffacd0b85a97d-44a98b76fd0sm20235330f8f.35 - gsmtp
+[2026-05-03T15:05:01.979Z] INFO POST /api/auth/login
+[2026-05-03T15:05:02.048Z] ERROR Request failed | Invalid email or password.
+[2026-05-03T15:05:16.873Z] INFO POST /api/auth/forgot-password
+[2026-05-03T15:05:17.400Z] ERROR Request failed | Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-48a8fee8751sm95361005e9.9 - gsmtp
+[2026-05-03T15:05:51.507Z] INFO POST /api/auth/forgot-password
+[2026-05-03T15:08:25.061Z] INFO POST /api/auth/register
+[2026-05-03T15:22:28.241Z] INFO POST /api/auth/register
+[2026-05-03T15:34:28.856Z] INFO POST /api/auth/register
+[2026-05-03T15:34:28.890Z] ERROR Request failed | A user with this email already exists.
+[2026-05-03T15:34:41.433Z] INFO POST /api/auth/register
+[2026-05-03T15:34:41.439Z] ERROR Request failed | A user with this email already exists.
+[2026-05-03T15:35:39.923Z] INFO POST /api/auth/login
+[2026-05-03T15:36:48.258Z] INFO POST /api/auth/forgot-password
+[2026-05-03T15:36:49.493Z] ERROR Request failed | Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials ffacd0b85a97d-44a8f424032sm18828143f8f.15 - gsmtp
+[2026-05-03T15:38:40.487Z] INFO POST /api/auth/forgot-password
+[2026-05-03T15:38:41.021Z] ERROR Request failed | Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials ffacd0b85a97d-44a8ef50be1sm20575568f8f.9 - gsmtp
+[2026-05-03T15:39:04.861Z] INFO POST /api/auth/forgot-password
+[2026-05-03T15:39:05.877Z] ERROR Request failed | Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials 5b1f17b1804b1-48a8fef8398sm58589895e9.31 - gsmtp
+[2026-05-03T16:03:32.224Z] INFO POST /api/auth/forgot-password
+[2026-05-03T16:03:33.495Z] ERROR Request failed | Invalid login: 535-5.7.8 Username and Password not accepted. For more information, go to
+535 5.7.8  https://support.google.com/mail/?p=BadCredentials ffacd0b85a97d-44a98b76eddsm18475663f8f.34 - gsmtp
+[2026-05-03T16:04:12.179Z] INFO POST /api/auth/login
+[2026-05-03T16:04:12.181Z] ERROR Request failed | Invalid email or password.
+[2026-05-03T16:04:31.041Z] INFO POST /api/auth/login
+[2026-05-03T16:07:38.144Z] INFO MongoDB connected successfully.
+[2026-05-03T16:07:38.178Z] INFO Backend running on port 5000
+[2026-05-03T16:08:49.402Z] INFO POST /api/auth/forgot-password
+[2026-05-03T16:08:50.402Z] ERROR Request failed | Email sending failed: Gmail needs a Google App Password in SMTP_PASS.
+[2026-05-03T16:09:11.359Z] INFO POST /api/auth/forgot-password
+[2026-05-03T16:09:11.916Z] ERROR Request failed | Email sending failed: Gmail needs a Google App Password in SMTP_PASS.
+[2026-05-03T20:53:26.498Z] INFO MongoDB connected successfully.
+[2026-05-03T20:53:26.519Z] INFO Backend running on port 5000
+[2026-05-03T20:54:53.654Z] INFO POST /api/auth/forgot-password
+[2026-05-03T20:54:56.212Z] ERROR Request failed | Email sending failed: Gmail needs a Google App Password in SMTP_PASS.
+[2026-05-03T20:55:33.378Z] INFO POST /api/auth/forgot-password
+[2026-05-03T20:55:34.567Z] ERROR Request failed | Email sending failed: Gmail needs a Google App Password in SMTP_PASS.
+[2026-05-03T20:56:12.665Z] INFO POST /api/auth/forgot-password
+[2026-05-03T20:56:12.672Z] ERROR Request failed | Please wait 21 seconds before requesting a new code.
+[2026-05-03T20:57:55.680Z] INFO POST /api/auth/forgot-password
+[2026-05-03T20:57:56.817Z] ERROR Request failed | Email sending failed: Gmail needs a Google App Password in SMTP_PASS.
+[2026-05-03T21:02:53.679Z] INFO MongoDB connected successfully.
+[2026-05-03T21:02:53.701Z] INFO Backend running on port 5000
+[2026-05-03T21:03:40.966Z] INFO POST /api/auth/forgot-password
+[2026-05-03T21:03:42.297Z] ERROR Request failed | Email sending failed: Gmail needs a Google App Password in SMTP_PASS.
+[2026-05-03T21:03:52.028Z] INFO POST /api/auth/forgot-password
+[2026-05-03T21:03:52.037Z] ERROR Request failed | Please wait 49 seconds before requesting a new code.
+[2026-05-03T21:36:16.580Z] INFO MongoDB connected successfully.
+[2026-05-03T21:36:16.615Z] INFO Backend running on port 5000
+[2026-05-03T21:55:49.362Z] INFO MongoDB connected successfully.
+[2026-05-03T21:55:49.405Z] INFO Backend running on port 5000
+[2026-05-03T21:56:44.843Z] INFO POST /api/auth/forgot-password
+[2026-05-03T21:56:45.786Z] ERROR Request failed | Email sending failed: SMTP authentication was rejected.
+[2026-05-03T21:56:59.502Z] INFO POST /api/auth/forgot-password
+[2026-05-03T21:56:59.531Z] ERROR Request failed | Please wait 46 seconds before requesting a new code.
+[2026-05-03T21:59:17.187Z] INFO MongoDB connected successfully.
+[2026-05-03T21:59:17.206Z] INFO Backend running on port 5000
+[2026-05-03T22:00:14.725Z] INFO POST /api/auth/forgot-password
+[2026-05-03T22:00:15.452Z] ERROR Request failed | Email sending failed: SMTP authentication was rejected.
+[2026-05-03T22:00:17.314Z] INFO POST /api/auth/forgot-password
+[2026-05-03T22:00:17.321Z] ERROR Request failed | Please wait 58 seconds before requesting a new code.
+[2026-05-03T22:00:18.246Z] INFO POST /api/auth/forgot-password
+[2026-05-03T22:00:18.251Z] ERROR Request failed | Please wait 57 seconds before requesting a new code.
+[2026-05-03T22:02:15.935Z] INFO POST /api/auth/login
+[2026-05-05T20:24:34.756Z] INFO MongoDB connected successfully.
+[2026-05-05T20:24:34.777Z] INFO Backend running on port 5000
+[2026-05-05T20:25:58.685Z] INFO POST /api/auth/forgot-password
+[2026-05-05T20:25:59.525Z] ERROR Request failed | Email sending failed: SMTP authentication was rejected.
+[2026-05-05T20:26:01.061Z] INFO POST /api/auth/forgot-password
+[2026-05-05T20:26:01.068Z] ERROR Request failed | Please wait 58 seconds before requesting a new code.
+[2026-05-05T20:26:57.870Z] INFO POST /api/auth/login
+[2026-05-05T20:26:57.970Z] ERROR Request failed | Invalid email or password.
+[2026-05-05T20:26:59.309Z] INFO POST /api/auth/login
+[2026-05-05T20:26:59.375Z] ERROR Request failed | Invalid email or password.
+[2026-05-05T20:27:06.258Z] INFO POST /api/auth/login
+[2026-05-06T11:26:48.368Z] INFO MongoDB connected successfully.
+[2026-05-06T11:26:48.397Z] INFO Backend running on port 5000
+[2026-05-06T11:38:15.976Z] INFO POST /api/auth/login
+[2026-05-06T11:38:16.204Z] ERROR Request failed | Invalid email or password.
+[2026-05-06T11:38:23.706Z] INFO POST /api/auth/login
+[2026-05-06T11:38:23.814Z] ERROR Request failed | Invalid email or password.
+[2026-05-06T12:26:06.595Z] INFO POST /api/auth/login

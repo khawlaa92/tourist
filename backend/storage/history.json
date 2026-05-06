@@ -1,0 +1,84 @@
+{
+  "chatMessages": [
+    {
+      "id": "bf4b631f-b57b-4546-805c-e1334c36a83e",
+      "userId": "2f7f6c44-ad2f-4cf5-b6cb-9026a3cce6be",
+      "message": "Best places to visit in Tunis?",
+      "response": "Recommended places to visit in Tunis:\n1. Medina of Tunis for heritage and traditional streets.\n2. Bardo National Museum for history and mosaics.\n3. Sidi Bou Said for architecture, sea views, and cafes.",
+      "createdAt": "2026-04-30T22:39:08.220Z"
+    },
+    {
+      "id": "dd93a30f-71a5-4275-a914-e7fa704bdbd7",
+      "userId": "2f7f6c44-ad2f-4cf5-b6cb-9026a3cce6be",
+      "message": "Best places to visit in Tunis?",
+      "response": "Recommended places to visit in Tunis:\n1. Medina of Tunis for heritage and traditional streets.\n2. Bardo National Museum for history and mosaics.\n3. Sidi Bou Said for architecture, sea views, and cafes.",
+      "createdAt": "2026-04-30T23:57:07.836Z"
+    },
+    {
+      "id": "2c897883-d619-4d7e-9193-197af066bd7a",
+      "userId": "2f7f6c44-ad2f-4cf5-b6cb-9026a3cce6be",
+      "message": "Best places to visit in Tunis?",
+      "response": "Recommended places to visit in Tunis:\n1. Medina of Tunis for heritage and traditional streets.\n2. Bardo National Museum for history and mosaics.\n3. Sidi Bou Said for architecture, sea views, and cafes.",
+      "createdAt": "2026-05-01T13:16:34.001Z"
+    }
+  ],
+  "translations": [
+    {
+      "id": "f6886c52-68f2-445e-8c93-51384e3c0b8a",
+      "userId": "2f7f6c44-ad2f-4cf5-b6cb-9026a3cce6be",
+      "inputType": "text",
+      "originalText": "Bonjour",
+      "translatedText": "[Mock translation to en] Bonjour",
+      "sourceLanguage": "English",
+      "targetLanguage": "en",
+      "originalFileName": null,
+      "createdAt": "2026-05-01T12:53:51.790Z"
+    },
+    {
+      "id": "4e80fd23-103d-4440-ab39-f3bddd323de3",
+      "userId": "2f7f6c44-ad2f-4cf5-b6cb-9026a3cce6be",
+      "inputType": "text",
+      "originalText": "Bonjour",
+      "translatedText": "[Mock translation to en] Bonjour",
+      "sourceLanguage": "English",
+      "targetLanguage": "en",
+      "originalFileName": null,
+      "createdAt": "2026-05-01T13:02:22.449Z"
+    },
+    {
+      "id": "8961286b-2dac-4898-9489-f27a5ede2d90",
+      "userId": null,
+      "inputType": "text",
+      "originalText": "Bonjour",
+      "translatedText": "[Mock translation to en] Bonjour",
+      "sourceLanguage": "French",
+      "targetLanguage": "en",
+      "originalFileName": null,
+      "createdAt": "2026-05-01T13:38:03.708Z"
+    },
+    {
+      "id": "5dec7cab-46ac-445a-8f2b-bfbb9350fcaf",
+      "userId": "2f7f6c44-ad2f-4cf5-b6cb-9026a3cce6be",
+      "inputType": "text",
+      "originalText": "Bonjour",
+      "translatedText": "[Mock translation to en] Bonjour",
+      "sourceLanguage": "English",
+      "targetLanguage": "en",
+      "originalFileName": null,
+      "createdAt": "2026-05-01T13:40:22.639Z"
+    },
+    {
+      "id": "f9471c6a-3b20-46e1-af51-4db2b8a090f8",
+      "userId": "2f7f6c44-ad2f-4cf5-b6cb-9026a3cce6be",
+      "inputType": "text",
+      "originalText": "Bonjour",
+      "translatedText": "[Mock translation to en] Bonjour",
+      "sourceLanguage": "English",
+      "targetLanguage": "en",
+      "originalFileName": null,
+      "createdAt": "2026-05-01T13:42:55.800Z"
+    }
+  ],
+  "visitedPlaces": [],
+  "recommendations": []
+}
