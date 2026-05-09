@@ -1,53 +1,27 @@
 const { v4: uuidv4 } = require('uuid');
-const env = require('../config/env');
-const { isMongoConnected } = require('../config/db');
-const { User } = require('./mongoModels');
-const { readJson, writeJson } = require('../utils/fileStore');
+const { db } = require('../config/firebase');
 
-async function getUsersStore() {
-  return readJson(env.paths.users, { users: [] });
-}
-
-async function saveUsersStore(store) {
-  return writeJson(env.paths.users, store);
-}
+const col = () => db.collection('users');
 
 async function findByEmail(email) {
-  if (env.useMongo && isMongoConnected()) {
-    return User.findOne({ email: email.toLowerCase() }).lean();
-  }
+  const snap = await col()
+    .where('email', '==', email.toLowerCase())
+    .limit(1)
+    .get();
 
-  const store = await getUsersStore();
-  return store.users.find((user) => user.email.toLowerCase() === email.toLowerCase()) || null;
+  if (snap.empty) return null;
+  const doc = snap.docs[0];
+  return { id: doc.id, ...doc.data() };
 }
 
 async function findById(userId) {
-  if (env.useMongo && isMongoConnected()) {
-    return User.findOne({ id: userId }).lean();
-  }
-
-  const store = await getUsersStore();
-  return store.users.find((user) => user.id === userId) || null;
+  const doc = await col().doc(userId).get();
+  return doc.exists ? { id: doc.id, ...doc.data() } : null;
 }
 
 async function createUser({ fullName, email, passwordHash }) {
-  if (env.useMongo && isMongoConnected()) {
-    const newUser = await User.create({
-      id: uuidv4(),
-      fullName,
-      email: email.toLowerCase(),
-      passwordHash,
-      emailVerified: false,
-      createdAt: new Date().toISOString(),
-    });
-
-    return newUser.toObject();
-  }
-
-  const store = await getUsersStore();
-
-  const newUser = {
-    id: uuidv4(),
+  const userId = uuidv4();
+  const user = {
     fullName,
     email: email.toLowerCase(),
     passwordHash,
@@ -55,39 +29,16 @@ async function createUser({ fullName, email, passwordHash }) {
     createdAt: new Date().toISOString(),
   };
 
-  store.users.push(newUser);
-  await saveUsersStore(store);
-  return newUser;
+  await col().doc(userId).set(user);
+  return { id: userId, ...user };
 }
 
 async function updatePassword(userId, passwordHash) {
-  if (env.useMongo && isMongoConnected()) {
-    const user = await User.findOneAndUpdate(
-      { id: userId },
-      {
-        passwordHash,
-        updatedAt: new Date().toISOString(),
-      },
-      {
-        new: true,
-      }
-    );
-
-    return user ? user.toObject() : null;
-  }
-
-  const store = await getUsersStore();
-  const userIndex = store.users.findIndex((user) => user.id === userId);
-
-  if (userIndex === -1) {
-    return null;
-  }
-
-  store.users[userIndex].passwordHash = passwordHash;
-  store.users[userIndex].updatedAt = new Date().toISOString();
-  await saveUsersStore(store);
-
-  return store.users[userIndex];
+  await col().doc(userId).update({
+    passwordHash,
+    updatedAt: new Date().toISOString(),
+  });
+  return findById(userId);
 }
 
 async function updateUser(userId, updates) {
@@ -96,30 +47,8 @@ async function updateUser(userId, updates) {
     updatedAt: new Date().toISOString(),
   };
 
-  if (env.useMongo && isMongoConnected()) {
-    const user = await User.findOneAndUpdate(
-      { id: userId },
-      nextUpdates,
-      { new: true }
-    );
-
-    return user ? user.toObject() : null;
-  }
-
-  const store = await getUsersStore();
-  const userIndex = store.users.findIndex((user) => user.id === userId);
-
-  if (userIndex === -1) {
-    return null;
-  }
-
-  store.users[userIndex] = {
-    ...store.users[userIndex],
-    ...nextUpdates,
-  };
-  await saveUsersStore(store);
-
-  return store.users[userIndex];
+  await col().doc(userId).update(nextUpdates);
+  return findById(userId);
 }
 
 module.exports = {

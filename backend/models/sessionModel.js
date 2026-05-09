@@ -1,179 +1,98 @@
-const env = require('../config/env');
-const { isMongoConnected } = require('../config/db');
-const { SessionStore } = require('./mongoModels');
-const { readJson, writeJson } = require('../utils/fileStore');
+const crypto = require('crypto');
+const { db } = require('../config/firebase');
+const { FieldValue } = require('firebase-admin/firestore');
 
-async function getMongoSessionStore() {
-  let store = await SessionStore.findOne({ key: 'default' });
+const revokedCol = () => db.collection('revokedTokens');
+const resetCol = () => db.collection('passwordResetTokens');
 
-  if (!store) {
-    store = await SessionStore.create({
-      key: 'default',
-      revokedTokens: [],
-      passwordResetTokens: [],
-    });
-  }
-
-  return store;
+/**
+ * Hash the token to produce a safe Firestore document ID.
+ * Tokens can contain characters that are invalid in doc IDs.
+ */
+function tokenDocId(token) {
+  return crypto.createHash('sha256').update(String(token)).digest('hex');
 }
 
-async function getSessionStore() {
-  return readJson(env.paths.sessions, {
-    revokedTokens: [],
-    passwordResetTokens: [],
-  });
-}
-
-async function saveSessionStore(store) {
-  return writeJson(env.paths.sessions, store);
-}
+// ─── Revoked tokens ──────────────────────────────────────────────────────────
 
 async function addRevokedToken(token) {
-  if (env.useMongo && isMongoConnected()) {
-    const store = await getMongoSessionStore();
-    store.revokedTokens.push({
-      token,
-      revokedAt: new Date().toISOString(),
-    });
-    await store.save();
-    return;
-  }
-
-  const store = await getSessionStore();
-  store.revokedTokens.push({
+  await revokedCol().doc(tokenDocId(token)).set({
     token,
     revokedAt: new Date().toISOString(),
   });
-  await saveSessionStore(store);
 }
 
 async function isTokenRevoked(token) {
-  if (env.useMongo && isMongoConnected()) {
-    const store = await getMongoSessionStore();
-    return store.revokedTokens.some((entry) => entry.token === token);
-  }
-
-  const store = await getSessionStore();
-  return store.revokedTokens.some((entry) => entry.token === token);
+  const doc = await revokedCol().doc(tokenDocId(token)).get();
+  return doc.exists;
 }
 
-async function saveResetToken(record) {
-  if (env.useMongo && isMongoConnected()) {
-    const store = await getMongoSessionStore();
-    store.passwordResetTokens.push(record);
-    await store.save();
-    return;
-  }
+// ─── Password reset tokens ───────────────────────────────────────────────────
 
-  const store = await getSessionStore();
-  store.passwordResetTokens.push(record);
-  await saveSessionStore(store);
+async function saveResetToken(record) {
+  await resetCol().doc(record.id).set(record);
 }
 
 async function saveOrReplaceResetToken(record) {
-  if (env.useMongo && isMongoConnected()) {
-    const store = await getMongoSessionStore();
-    store.passwordResetTokens = store.passwordResetTokens.filter(
-      (entry) => entry.userId !== record.userId || entry.usedAt
-    );
-    store.passwordResetTokens.push(record);
-    await store.save();
-    return record;
-  }
+  // Remove any active (unused) tokens for this user
+  const existing = await resetCol()
+    .where('userId', '==', record.userId)
+    .get();
 
-  const store = await getSessionStore();
-  store.passwordResetTokens = store.passwordResetTokens.filter(
-    (entry) => entry.userId !== record.userId || entry.usedAt
-  );
-  store.passwordResetTokens.push(record);
-  await saveSessionStore(store);
+  const batch = db.batch();
+
+  existing.docs.forEach((d) => {
+    if (!d.data().usedAt) {
+      batch.delete(d.ref);
+    }
+  });
+
+  batch.set(resetCol().doc(record.id), record);
+  await batch.commit();
   return record;
 }
 
 async function findResetToken(token) {
-  if (env.useMongo && isMongoConnected()) {
-    const store = await getMongoSessionStore();
-    return store.passwordResetTokens.find((entry) => entry.token === token) || null;
-  }
-
-  const store = await getSessionStore();
-  return store.passwordResetTokens.find((entry) => entry.token === token) || null;
+  const snap = await resetCol().where('token', '==', token).limit(1).get();
+  if (snap.empty) return null;
+  const doc = snap.docs[0];
+  return { id: doc.id, ...doc.data() };
 }
 
 async function findResetTokenByUserId(userId) {
-  if (env.useMongo && isMongoConnected()) {
-    const store = await getMongoSessionStore();
-    const matches = store.passwordResetTokens.filter((entry) => entry.userId === userId);
-    return matches[matches.length - 1] || null;
-  }
+  const snap = await resetCol()
+    .where('userId', '==', userId)
+    .orderBy('createdAt', 'desc')
+    .limit(1)
+    .get();
 
-  const store = await getSessionStore();
-  const matches = store.passwordResetTokens.filter((entry) => entry.userId === userId);
-  return matches[matches.length - 1] || null;
+  if (snap.empty) return null;
+  const doc = snap.docs[0];
+  return { id: doc.id, ...doc.data() };
 }
 
 async function findResetTokenByResetTokenHash(resetTokenHash) {
-  if (env.useMongo && isMongoConnected()) {
-    const store = await getMongoSessionStore();
-    return (
-      store.passwordResetTokens.find((entry) => entry.resetTokenHash === resetTokenHash) || null
-    );
-  }
+  const snap = await resetCol()
+    .where('resetTokenHash', '==', resetTokenHash)
+    .limit(1)
+    .get();
 
-  const store = await getSessionStore();
-  return store.passwordResetTokens.find((entry) => entry.resetTokenHash === resetTokenHash) || null;
+  if (snap.empty) return null;
+  const doc = snap.docs[0];
+  return { id: doc.id, ...doc.data() };
 }
 
 async function updateResetToken(recordId, updates) {
-  if (env.useMongo && isMongoConnected()) {
-    const store = await getMongoSessionStore();
-    const tokenEntry = store.passwordResetTokens.find((entry) => entry.id === recordId);
-
-    if (!tokenEntry) {
-      return null;
-    }
-
-    Object.assign(tokenEntry, updates);
-    await store.save();
-    return tokenEntry;
-  }
-
-  const store = await getSessionStore();
-  const tokenEntry = store.passwordResetTokens.find((entry) => entry.id === recordId);
-
-  if (!tokenEntry) {
-    return null;
-  }
-
-  Object.assign(tokenEntry, updates);
-  await saveSessionStore(store);
-  return tokenEntry;
+  const ref = resetCol().doc(recordId);
+  await ref.update(updates);
+  const doc = await ref.get();
+  return doc.exists ? { id: doc.id, ...doc.data() } : null;
 }
 
 async function markResetTokenUsed(token) {
-  if (env.useMongo && isMongoConnected()) {
-    const store = await getMongoSessionStore();
-    const tokenEntry = store.passwordResetTokens.find((entry) => entry.token === token);
-
-    if (!tokenEntry) {
-      return null;
-    }
-
-    tokenEntry.usedAt = new Date().toISOString();
-    await store.save();
-    return tokenEntry;
-  }
-
-  const store = await getSessionStore();
-  const tokenEntry = store.passwordResetTokens.find((entry) => entry.token === token);
-
-  if (!tokenEntry) {
-    return null;
-  }
-
-  tokenEntry.usedAt = new Date().toISOString();
-  await saveSessionStore(store);
-  return tokenEntry;
+  const record = await findResetToken(token);
+  if (!record) return null;
+  return updateResetToken(record.id, { usedAt: new Date().toISOString() });
 }
 
 module.exports = {

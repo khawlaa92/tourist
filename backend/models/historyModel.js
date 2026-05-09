@@ -1,96 +1,46 @@
-const env = require('../config/env');
-const { isMongoConnected } = require('../config/db');
-const { HistoryStore } = require('./mongoModels');
-const { readJson, writeJson } = require('../utils/fileStore');
+const { db } = require('../config/firebase');
+const { FieldValue } = require('firebase-admin/firestore');
 
-async function getMongoHistoryStore() {
-  let store = await HistoryStore.findOne({ key: 'default' });
+/**
+ * History is stored as a single shared Firestore document.
+ * Document ID: 'default' in the 'history' collection.
+ */
+const docRef = () => db.collection('history').doc('default');
 
-  if (!store) {
-    store = await HistoryStore.create({
-      key: 'default',
-      chatMessages: [],
-      translations: [],
-      visitedPlaces: [],
-      recommendations: [],
-    });
-  }
-
-  return store;
-}
+const DEFAULTS = {
+  chatMessages: [],
+  translations: [],
+  visitedPlaces: [],
+  recommendations: [],
+};
 
 async function getHistoryStore() {
-  if (env.useMongo && isMongoConnected()) {
-    const store = await getMongoHistoryStore();
-    return store.toObject();
-  }
-
-  return readJson(env.paths.history, {
-    chatMessages: [],
-    translations: [],
-    visitedPlaces: [],
-    recommendations: [],
-  });
+  const doc = await docRef().get();
+  return doc.exists ? doc.data() : { ...DEFAULTS };
 }
 
-async function saveHistoryStore(store) {
-  return writeJson(env.paths.history, store);
+async function appendToField(field, entry) {
+  await docRef().set(
+    { [field]: FieldValue.arrayUnion(entry) },
+    { merge: true }
+  );
+  return entry;
 }
 
 async function addChatMessage(entry) {
-  if (env.useMongo && isMongoConnected()) {
-    const store = await getMongoHistoryStore();
-    store.chatMessages.push(entry);
-    await store.save();
-    return entry;
-  }
-
-  const store = await getHistoryStore();
-  store.chatMessages.push(entry);
-  await saveHistoryStore(store);
-  return entry;
+  return appendToField('chatMessages', entry);
 }
 
 async function addTranslation(entry) {
-  if (env.useMongo && isMongoConnected()) {
-    const store = await getMongoHistoryStore();
-    store.translations.push(entry);
-    await store.save();
-    return entry;
-  }
-
-  const store = await getHistoryStore();
-  store.translations.push(entry);
-  await saveHistoryStore(store);
-  return entry;
+  return appendToField('translations', entry);
 }
 
 async function addVisitedPlace(entry) {
-  if (env.useMongo && isMongoConnected()) {
-    const store = await getMongoHistoryStore();
-    store.visitedPlaces.push(entry);
-    await store.save();
-    return entry;
-  }
-
-  const store = await getHistoryStore();
-  store.visitedPlaces.push(entry);
-  await saveHistoryStore(store);
-  return entry;
+  return appendToField('visitedPlaces', entry);
 }
 
 async function addRecommendation(entry) {
-  if (env.useMongo && isMongoConnected()) {
-    const store = await getMongoHistoryStore();
-    store.recommendations.push(entry);
-    await store.save();
-    return entry;
-  }
-
-  const store = await getHistoryStore();
-  store.recommendations.push(entry);
-  await saveHistoryStore(store);
-  return entry;
+  return appendToField('recommendations', entry);
 }
 
 module.exports = {

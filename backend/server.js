@@ -1,6 +1,8 @@
 require('./config/loadEnv');
+// Initialize Firebase Admin SDK before anything else
+require('./config/firebase');
+
 const logger = require('./utils/logger');
-const { connectToDatabase } = require('./config/db');
 
 if (!process.env.OPENAI_API_KEY) {
   logger.warn('OPENAI_API_KEY is not set. The backend will use mock AI responses where supported until backend/.env is updated.');
@@ -12,7 +14,7 @@ const { initializeStorage } = require('./utils/fileStore');
 
 async function bootstrap() {
   try {
-    await connectToDatabase();
+    // Ensure local upload/temp directories exist
     await initializeStorage();
 
     const server = app.listen(env.port, () => {
